@@ -11,4 +11,4 @@ into this vast field.
 
 # general-scripts
 
-This folder consists of the other general scripts that I used in my study that produced different visualization maps such as DEM maps, PAR extent, etc.
+This directory consists of the other general scripts that I used in my study that produced different visualization maps such as DEM maps, PAR extent, etc.
