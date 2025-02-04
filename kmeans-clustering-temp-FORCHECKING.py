@@ -102,6 +102,7 @@ plt.xticks(ticks=range(1, 13), labels=months, rotation=45, fontsize=14)
 plt.show()
 
 ### UNCOMMENT AS NEEDED
+### USED AS AN INPUT FILE FOR QGIS
 
 # # Create a DataFrame to export to CSV
 # df = pd.DataFrame({
