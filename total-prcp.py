@@ -152,10 +152,11 @@ print(f"  S: {result.s}")
 print(f"  Var(S): {result.var_s}")
 print(f"  Slope: {result.slope}")
 
+
 # COLORMAP FOR PRECIPITATION LOOPING THROUGH ALL YEARS (see behavior of precipitation throughout the years)
 # Create a directory to save the plots
-output_dir = r'C:\Users\HP\Dropbox\PC\Desktop\College\4th Year\2nd Sem\Research 2\Plots\prcp-plots\output_dir'
-os.makedirs(output_dir, exist_ok=True)
+# output_dir = r'C:\Users\HP\Dropbox\PC\Desktop\College\4th Year\2nd Sem\Research 2\Plots\prcp-plots\output_dir'
+# os.makedirs(output_dir, exist_ok=True)
 
 # # Loop over each year and create a plot for the average total precipitation for that year
 # for year in range(1950, 2025):
