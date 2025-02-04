@@ -9,7 +9,7 @@ c = cdsapi.Client()
 logging.basicConfig(level=logging.INFO)
 
 # Configuring the output directory
-output_dir = r'C:\Users\HP\Dropbox\PC\Desktop\College\4th Year\1st Sem\Research 1\Data\Tests'
+output_dir = r'insert\file\path'
 
 # Creating a loop to download the data
 for year in range(1951, 1952): 
