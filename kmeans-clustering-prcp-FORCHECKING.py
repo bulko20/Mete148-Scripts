@@ -93,6 +93,7 @@ plt.show()
 
 
 ### UNCOMMENT BELOW IF NEEDED
+### USED AS AN INPUT FILE FOR QGIS
 
 # # Create a DataFrame to export to CSV
 # df = pd.DataFrame({
