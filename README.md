@@ -1,4 +1,6 @@
-# This repository consists of the different Python scripts that I used during my undergraduate thesis entitled: Analyzing the Climate Characteristics of Temperature and Rainfall and How it Shapes the Climate Zones of Eastern Visayas using ERA5 Dataset
+This repository consists of the different Python scripts that I used during my undergraduate thesis entitled: 
+
+# Analyzing the Climate Characteristics of Temperature and Rainfall and How it Shapes the Climate Zones of Eastern Visayas using ERA5 Dataset
 
 These different scripts are here to serve as future reference for future codes. I do not claim to be a professional in said field, however,
 I hope these scripts can represent my intellect in coding and interpreting said results.
