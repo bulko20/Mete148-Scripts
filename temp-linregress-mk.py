@@ -48,7 +48,7 @@ years_table = np.arange(2040, 2101, 20)
 temperature_table = slope * years_table + intercept
 
 # Plotting the observed (with trend line) and projected temperature
-plt.figure(figsize=(20, 10))
+plt.figure(figsize=(20, 10), dpi=900)
 plt.plot(years, temperature, label='Observed Temperature (1950-2024)', alpha=0.8, linewidth=2)
 plt.plot(years, slope * years + intercept, label='Trend Line', color='red', linestyle='--', linewidth=3)
 plt.plot(future_years, future_temperature, label='Projected Temperature', linestyle='--', color='green', linewidth=3)
