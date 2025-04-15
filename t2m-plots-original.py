@@ -201,7 +201,7 @@ intercept = anomalies.mean() - slope * years.mean()
 trend_line = slope * years + intercept
 
 # Plot the temperature anomalies with the trend line
-plt.figure(figsize=(20, 10))
+plt.figure(figsize=(20, 10), dpi=1200)
 bars = plt.bar(years, anomalies, color=['blue' if anomaly < 0 else 'red' for anomaly in anomalies], linestyle='--')
 plt.plot(years, trend_line, color='black', linewidth=2, label=f'Trend line (slope = {slope:.4f}) °C/year')
 
@@ -236,7 +236,7 @@ print(f"Projected temperature anomaly in 2050: {future_temp:.4f} °C")
 
 # Create a colormap of the temperature anomalies for the years 1950, 1975, 2000, and 2024
 years_to_plot = [1950, 1975, 2000, 2024]
-fig, axs = plt.subplots(2, 2, figsize=(20, 20), subplot_kw={'projection': ccrs.PlateCarree()})
+fig, axs = plt.subplots(2, 2, figsize=(20, 20), subplot_kw={'projection': ccrs.PlateCarree()}, dpi=1200)
 
 # Define the levels for the contour plot
 levels = np.linspace(-0.75, 1.25, 100)
