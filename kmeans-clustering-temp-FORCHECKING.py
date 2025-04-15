@@ -89,20 +89,18 @@ monthly_means_da = xr.concat(monthly_means, dim='cluster')
 months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 # Plot the monthly averaged values for each cluster
-plt.figure(figsize=(20, 10))
+plt.figure(figsize=(20, 10), dpi=900)
 for i in range(k):
-    plt.plot(monthly_means_da['month'], monthly_means_da.sel(cluster=i), label=f'Cluster {i+1}', color=colors[i])
+    plt.plot(monthly_means_da['month'], monthly_means_da.sel(cluster=i), label=f'Cluster {i+1}', color=colors[i], linewidth=3)
 
-plt.title('Monthly Averaged Temperature for Each Cluster')
-plt.xlabel('Month', fontsize=14)
-plt.ylabel('Temperature (°C)', fontsize=14)
-plt.legend(loc='upper left', fontsize=14)
+plt.xlabel('Month', fontsize=16)
+plt.ylabel('Temperature (°C)', fontsize=16)
+plt.legend(loc='upper left', fontsize=18)
 plt.grid(True)
-plt.xticks(ticks=range(1, 13), labels=months, rotation=45, fontsize=14)
+plt.xticks(ticks=range(1, 13), labels=months, rotation=45, fontsize=16)
 plt.show()
 
 ### UNCOMMENT AS NEEDED
-### USED AS AN INPUT FILE FOR QGIS
 
 # # Create a DataFrame to export to CSV
 # df = pd.DataFrame({
