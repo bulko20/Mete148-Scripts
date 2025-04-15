@@ -56,7 +56,7 @@ plt.show()
 
 # Creating subplots for total precipitation in 1950, 1975, 2000, and 2024
 years_to_plot = [1950, 1975, 2000, 2024]
-fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(20, 20), subplot_kw={'projection': ccrs.PlateCarree()})
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(20, 20), subplot_kw={'projection': ccrs.PlateCarree()}, dpi=900)
 
 for ax, year in zip(axes.flat, years_to_plot):
     tp_year = tp_mm.sel(time=str(year))
@@ -123,7 +123,7 @@ years_numeric = np.array([year.astype('datetime64[Y]').astype(int) + 1970 for ye
 slope, intercept, r_value, p_value, std_err = linregress(years_numeric, tp_1d)
 
 # Plotting the time series of average total precipitation
-plt.figure(figsize=(20, 10))
+plt.figure(figsize=(20, 10), dpi=900)
 plt.plot(years, tp_1d, label='Observed Precipitation')
 plt.plot(years, slope * years_numeric + intercept, label='Trend Line', color='red', linestyle='--', linewidth=1.5)
 plt.xlabel('Year', fontsize=15)
