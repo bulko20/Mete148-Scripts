@@ -1,3 +1,6 @@
+### THIS STATISTICAL TOOL WAS CHANGED TO SPEARMAN RHO DUE TO NORMALITY DISTRIBUTION OF DATASET ###
+### REFER TO FILE APPLYING SPEARMAN RHO ------------------------------------------------------ ###
+
 # Importing the necessary libraries
 import numpy as np
 import matplotlib.pyplot as plt
