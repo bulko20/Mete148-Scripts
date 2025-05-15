@@ -55,7 +55,7 @@ month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', '
 
 
 # Plotting the results using contour plot with cartopy
-fig, axes = plt.subplots(nrows=4, ncols=3, figsize=(10.5, 20.5), subplot_kw={'projection': ccrs.PlateCarree()}, constrained_layout=True, dpi=900)
+fig, axes = plt.subplots(nrows=4, ncols=3, figsize=(11, 21), subplot_kw={'projection': ccrs.PlateCarree()}, dpi=900)
 
 # Creating a custom colormap and normalizing the colorbar
 bounds = [0, 2, 4, 6, 8, 10]
@@ -73,13 +73,18 @@ for i, ax in enumerate(axes.flat):
     ax.streamplot(x, y, uwind, vwind, color='k', density=0.5, arrowsize=2.5, arrowstyle='-|>', transform=ccrs.PlateCarree())
 
     ax.set_extent([mean_uwnd.longitude.min().item(), mean_uwnd.longitude.max().item(), mean_uwnd.latitude.min().item(), mean_uwnd.latitude.max().item()], crs=ccrs.PlateCarree())
+    
+    # Adding a title for each plot referring to their month number
+    ax.set_title(f'{month[month_idx]}', fontsize=20)
 
 # Adding a colorbar
-cax = fig.add_axes([1.05, 0.15, 0.02, 0.7])
+cax = fig.add_axes([0.99, 0.15, 0.02, 0.7])
 colorbar = ColorbarBase(cax, cmap=custom_cmap,
                         norm=norm, extend='max',
                         ticks=np.arange(0, 11, 1))
-colorbar.set_label('Wind speed (m/s)', fontsize=30)
-colorbar.ax.tick_params(labelsize=25)
+colorbar.set_label('Wind speed (m/s)', fontsize=20)
+colorbar.ax.tick_params(labelsize=18)
 
+plt.suptitle('Mean Monthly Wind Speed and Direction', fontsize=30, x=0.55, y=0.9175)
+plt.subplots_adjust(wspace=0.05, hspace=0.1)  # Adjust spacing between subplots
 plt.show()
