@@ -84,6 +84,8 @@ for i, month in enumerate(months):
     axs[i].scatter(precipitation, temperature, color='b', alpha=0.8)
     axs[i].plot(np.unique(precipitation), np.poly1d(np.polyfit(precipitation, temperature, 1))(np.unique(precipitation)), color='r', linestyle='--', linewidth=3)
     axs[i].grid()
+    axs[i].set_title(f"Month: {month}", fontsize=18) 
 
-plt.tight_layout()
+
+plt.suptitle('Monthly Precipitation-Temperature (1950-2024)', fontsize=24, y=0.920)
 plt.show()
