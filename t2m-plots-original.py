@@ -4,7 +4,8 @@ import cartopy.crs as ccrs #type: ignore
 import cartopy.feature as cfeature #type: ignore
 from matplotlib.lines import Line2D
 import numpy as np
-import os
+
+
 
 # Path to the new dataset file
 grib_file = r'C:\Users\HP\Dropbox\PC\Desktop\College\4th Year\1st Sem\Research 1\Data\Actual\all-years-temp.grib'
@@ -218,8 +219,8 @@ plt.legend(handles=[blue_patch, red_patch,
                     plt.Line2D([0], [0], color='black', lw=2, label=f'Trend line (slope = {slope:.4f}) °C/year'),
                     custom_legend], loc='upper left', fontsize=15)
 
-plt.xlabel('Year', fontsize=15)
-plt.ylabel('Temperature Anomaly (°C)', fontsize=15)
+plt.xlabel('Year', fontsize=20)
+plt.ylabel('Temperature Anomaly (°C)', fontsize=20)
 plt.title('Annual Temperature Anomalies (1950-2024)', fontsize=25)
 plt.grid(True)
 plt.show()
@@ -259,6 +260,10 @@ for ax, year in zip(axs.flat, years_to_plot):
     gl.right_labels = False
     gl.xlabel_style = {'size': 12}
     gl.ylabel_style = {'size': 12}
+    
+    # Add a legend-like title within the subplot at the upper-right
+    ax.text(0.95, 0.95, f'{year}', transform=ax.transAxes, fontsize=15, ha='right', va='top', 
+            bbox=dict(facecolor='white', alpha=0.8, edgecolor='black'))
 
 # Adjust layout to reduce spaces between plots
 plt.subplots_adjust(wspace=0.1, hspace=0.1)
@@ -269,12 +274,14 @@ contour = ax.contourf(anomalies_for_year['longitude'], anomalies_for_year['latit
                       levels=levels, transform=ccrs.PlateCarree(), cmap='coolwarm', extend='both', norm=norm)
 
 # Adding colorbar
-cbar = fig.colorbar(contour, ax=axs, orientation='vertical', pad=0.05, shrink=0.5)
-cbar.set_label('Temperature Anomalies (°C)', fontsize=20)
-cbar.ax.tick_params(labelsize=15)
+cbar = fig.colorbar(contour, ax=axs, orientation='vertical', pad=0.02, aspect=40, shrink=0.85)
+cbar.set_label('Temperature Anomalies (°C)', fontsize=25)
+cbar.ax.tick_params(labelsize=20)
 
 # Set the colorbar ticks
 cbar.set_ticks(np.arange(-0.75, 1.26, 0.25))
 
-# Show the plot
+# Name and show the plot
+plt.suptitle('Temperature Anomalies for Selected Years', fontsize=35, y=0.910)
+# plt.tight_layout(rect=[0, 0.03, 1, 0.95])  # Adjust layout to make room for the suptitle
 plt.show()
