@@ -57,15 +57,18 @@ plt.axvline(x=2025, color='black', label='Projection Start Year (2025)', linewid
 # Annotate the plot with projected values for specific years
 for year, temp in zip(years_table, temperature_table):
     plt.annotate(f'{temp:.2f}°C', xy=(year, temp), xytext=(year, temp - 0.5),
-                 arrowprops=dict(facecolor='black', arrowstyle='->'), fontsize=14, ha='center')
+                 arrowprops=dict(facecolor='black', arrowstyle='->'), fontsize=20, ha='center')
 
-plt.xlabel('Year', fontsize=14)
-plt.ylabel('Temperature (°C)', fontsize=15)
+plt.xlabel('Year', fontsize=25)
+plt.ylabel('Temperature (°C)', fontsize=25)
 
 # Adding regression equation to the legend
 regression_label = f'Regression equation: {slope:.4f} * Year + {intercept:.4f}'
-plt.legend(loc='upper left', fontsize=15)
-plt.text(0.05, 0.77, regression_label, transform=plt.gca().transAxes, fontsize=14, verticalalignment='top')
+plt.legend(loc='upper left', fontsize=20)
+plt.text(0.05, 0.77, regression_label, transform=plt.gca().transAxes, fontsize=20, verticalalignment='top')
 
+plt.title('Temperature Trend and Projection (1950-2100)', fontsize=30)
+plt.xticks(fontsize=20)
+plt.yticks(fontsize=20)
 plt.grid()
 plt.show()
